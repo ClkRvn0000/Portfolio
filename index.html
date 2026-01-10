@@ -139,7 +139,7 @@
 </body>
 <script>
     document.addEventListener("DOMContentLoaded", function() {
-        const randomId = 129;
+        const randomId = Math.floor(Math.random() * 1025) + 1;
 
         const pokemonUrl = `https://pokeapi.co/api/v2/pokemon/${randomId}`;
         const speciesUrl = `https://pokeapi.co/api/v2/pokemon-species/${randomId}`;
@@ -170,4 +170,5 @@
     });
 </script>
 </html>
+
 
