@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mes Sites</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="cv-container2">
+
+        <div class="nav">
+            <h3>Porfolio - Ervan Celik</h3>
+            <div class="sites"><a href="index.html">Accueil</a>
+            <a href="lien.html">Sites</a></div>
+        </div>
+        <div class="lien">
+            <h1>MES TRAVAUX EN DEUST WMI</h1>
+            <div class="liens">
+                <a href="https://ervancelik3.wixsite.com/ervan-celik" target="_blank">Site Wix UEL102</a>
+                <a href="https://celik10.hosting.unilim.fr/UEL104/minisite/" target="_blank">Site sur Hosting UEL104</a>
+            </div>
+        </div>
+        <div class="footer">
+            <div class="socials">
+                <h4>Mes Réseaux</h4>
+                <div><a href="https://www.instagram.com/ecwhynot0000/" target="_blank">Instagram</a></div>
+                <div><a href="https://www.tiktok.com/@ecwhynot0000" target="_blank">TikTok</a></div>
+            </div>
+            <div class="pokemon-widget">
+            <h3>POKÉMON DU MOMENT</h3>
+            <div id="poke-container" style="text-align: center;">
+                <img id="poke-img" src="" alt="Chargement..." width="120px">
+                <div id="poke-name" style="text-transform: capitalize; font-weight: bold;"></div>
+            </div>
+        </div>
+            <div class="contacts">
+                <h4>Me Contacter</h4>
+                <div><a href="mailto:ervan.celik@etu.unilim.fr">ervan.celik@etu.unilim.fr</a></div>
+            </div>
+        </div>
+    </div>
+</body>
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        const randomId = Math.floor(Math.random() * 1025) + 1;
+
+        const pokemonUrl = `https://pokeapi.co/api/v2/pokemon/${randomId}`;
+        const speciesUrl = `https://pokeapi.co/api/v2/pokemon-species/${randomId}`;
+
+        Promise.all([
+            fetch(pokemonUrl).then(res => res.json()),
+            fetch(speciesUrl).then(res => res.json())
+        ])
+        .then(([pokemonData, speciesData]) => {
+            console.log("Mes données Pokémon :", pokemonData);
+            console.log("Mes données Espèce :", speciesData);
+            const imgElement = document.getElementById('poke-img');
+            const imageUrl = pokemonData.sprites.other['official-artwork'].front_default || pokemonData.sprites.front_default;
+            imgElement.src = imageUrl;
+
+            const nameElement = document.getElementById('poke-name');
+            
+            const frenchEntry = speciesData.names.find(entry => entry.language.name === 'fr');
+            
+            if (frenchEntry) {
+                nameElement.textContent = "#" + randomId + " " + frenchEntry.name;
+            } else {
+                nameElement.textContent = "#" + randomId + " " + pokemonData.name;
+            }
+        })
+        .catch(error => {
+            console.error('Erreur API:', error);
+            document.getElementById('poke-name').textContent = "Erreur...";
+        });
+    });
+</script>
+</html>

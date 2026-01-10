@@ -1,0 +1,252 @@
+@import url('https://fonts.googleapis.com/css2?family=Concert+One&family=Merriweather+Sans:ital,wght@0,300..800;1,300..800&family=Sigmar&display=swap');
+
+body {
+    font-family: 'Merriweather Sans';
+    margin: 0;
+    text-shadow: 3px 3px 4px #00000099;
+}
+a {
+    text-decoration: none;
+    text-decoration: underline;
+    color: black;
+}
+a:hover {
+    text-decoration: none;
+}
+/*div {
+    border: solid ;
+}*/
+.cv-container {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    grid-template-rows: auto 0.5fr 1fr auto;
+    grid-template-areas: 
+    "nav nav"
+    "prof prof"
+    "gauche droite"
+    "foot foot";
+
+}
+.nav {
+    grid-area: nav;
+    display: grid;
+    grid-template-columns: auto 1fr auto auto;
+    grid-template-rows: auto;
+    grid-template-areas: 
+    "titre . site";
+    align-items: center;
+    column-gap: 1em;
+    border-bottom: solid 1em grey;
+    text-shadow: 3px 3px 4px #b9b9b999;
+
+}
+
+.nav h3 {
+    grid-area: titre;
+    margin-left: 1em;
+}
+.nav div {
+    grid-area: site;
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-gap: 1em;
+    
+    
+}
+.profil {
+    grid-area: prof;
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: auto 1fr;
+    justify-items: center;
+    align-items: center;
+    background-image:radial-gradient(rgb(255, 228, 196, 0.8),rgb(248, 210, 164, 0.8)), url("image/kurekoyu.jpg");
+    background-size: cover;
+    background-blend-mode: hard-light;
+    color: aliceblue;
+    
+}
+.pta {
+    display: grid;
+    justify-items: center;
+    padding-top: 1em;
+}
+.pta h1 {
+    margin-bottom: 0;
+}
+.pta img {
+    border-radius: 200px;
+    box-shadow: 0px 0px 20px 5px #f55f0099;
+    border: solid 5px rgb(245 175 241);
+
+}
+.age {
+    font-size: larger;
+    font-style: italic;
+}
+.projet {
+    display: grid;
+    justify-items: center;
+    font-size: larger;
+}
+.projet h3 {
+    margin: 0;
+}
+.projet ul {
+    list-style: square;
+    text-align: justify;
+}
+.colonne-gauche {
+    grid-area: gauche;
+    color: aliceblue;
+    display: grid;
+    border: solid rgb(9, 90, 212);
+    padding: 1em;
+    margin-right: 1em;
+    border-radius: 0 50px 50px 0;
+    background-image: linear-gradient(rgb(0, 162, 255), rgb(6, 145, 226));
+}
+.colonne-gauche a {
+    color: aliceblue;
+}
+.colonne-droite {
+    grid-area: droite;
+    display: grid;
+    padding: 1em;
+    margin-left: 1em;
+    justify-content: space-around;
+    text-shadow: 3px 3px 4px #b9b9b999;
+
+}
+.diplome h4 {
+    margin-bottom: 0.5em;
+}
+.footer {
+    grid-area: foot;
+    display: grid;
+    grid-template-columns: auto auto auto;
+    justify-items: center;
+    background-image:radial-gradient(rgb(238, 59, 68), rgb(185, 42, 66) ) ;
+    border-top: solid 1em goldenrod;
+    padding-bottom: 1em;
+    color: aliceblue;
+}
+.footer h4 {
+    font-size: large;
+    margin-bottom: 1em;
+}
+.footer a {
+    color: rgb(233, 236, 238);
+}
+.socials div  {
+    margin-bottom: 1em;
+}
+
+.cv-container2 {
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    grid-template-columns: 1fr;
+    grid-template-areas: "nav""lien""foot";
+    min-height: 100vh
+}
+.lien {
+    grid-area: lien;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    font-size: 2em;
+    padding-bottom: 1em;
+}
+.liens{
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-template-rows: auto;
+    grid-gap: 8em;
+}
+
+@media screen and (max-width: 768px) {
+    .cv-container2 {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+    }
+    .cv-container {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+        grid-template-areas: 
+        "nav"
+        "prof"
+        "gauche"
+        "droite"
+        "foot";
+    }
+    .nav {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+        grid-template-areas: "titre""site";
+        justify-items: center;
+        padding-bottom: 10px;
+    }
+    .nav h3 {
+        margin-left: 0;
+        text-align: center;
+    }
+    .pta img {
+        width: 200px; 
+        height: auto;
+        
+    }
+    .pta h1{
+        font-size: 1.5em; 
+        text-align: center;
+    }
+    .pta h2 {
+        font-size: 0.4em;
+    }
+    .colonne-gauche {
+        margin-right: 0; 
+        margin-bottom: 1em;
+        border: none;
+        border-radius: 0;
+        font-size: 0.8em;
+        
+    }
+     .colonne-droite {
+        margin-right: 0; 
+        margin-bottom: 1em;
+        padding: 0 1em;
+        font-size: 0.8em;
+    }
+    .footer {
+        grid-template-columns: 1fr;
+        gap: 2em; 
+        padding: 2em 1em;
+        
+    }
+    .footer div {
+        width: 230px;
+    }
+    .pokemon-widget {
+        order: 2;
+       
+    }
+    .socials {
+        order: 0;
+    }
+    .contacts {
+        order: 1;
+    }
+    .lien {
+        font-size: 1.5em;
+    }
+    .lien h1 {
+        font-size: 1.3em;
+    }
+    .liens{
+        display: grid;
+        grid-template-columns: auto;
+        grid-template-rows: auto;
+        grid-gap: 2.5em;
+    }
+
+}

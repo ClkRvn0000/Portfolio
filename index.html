@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio - Ervan CELIK</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="cv-container">
+
+        <div class="nav">
+            <h3>Porfolio - Ervan Celik</h3>
+            <div class="sites"><a href="index.html">Accueil</a>
+            <a href="lien.html">Sites</a></div>
+        </div>
+        <div class="profil">
+            <div class="pta"><img src="image/photocv.png" alt="Ervan Celik" width="400px">
+            <h1>Ervan CELIK</h1>
+            <div class="age">22 ans</div></div>
+            <div class="projet">
+                <h2>CONCEPTEUR MULTIMÉDIA</h2>
+                <!-- <h3>MON PROJET | Stage - du 18/05 au 15/06</h3>
+                <ul>
+                    <li>Découvrir de nouveaux outils et réaliser des projets variés.</li>
+                    <li>M'intégrer dans un milieu professionnel.</li>
+                    <li>Valider mon projet professionnel en étant sur le terrain.</li>
+                </ul>-->
+            </div>
+        </div>
+        <div class="colonne-gauche">
+            
+            <div class="contact">
+                <h3>COORDONNÉES</h3>
+                <div>06 52 12 07 80</div>
+                <div><a href="mailto:ervan.celik@etu.unilim.fr">ervan.celik@etu.unilim.fr</a></div>
+                <div>4 Allée Carl Von Linne 79000 Niort</div>
+                <div><a href="http://portfolioervancelik.wordpress.com" target="_blank" >Portfolio travaux</a></div>
+            </div>
+
+            <div class="langues">
+                <h3>LANGUES MAÎTRISÉES</h3>
+                <div>Français</div>
+                <div>Anglais</div>
+            </div>
+
+            <div class="competences">
+                <h3>COMPÉTENCES</h3>
+                <ul>
+                    <li>Montage audiovisuel</li>
+                    <li>Suite Microsoft Office</li>
+                    <li>Suite Adobe - débutant</li>
+                </ul>
+            </div>
+
+            <div class="interets">
+                <h3>CENTRES D'INTÉRÊT</h3>
+                <ul>
+                    <li>Dessin (Illustration, Manga, Animation)</li>
+                    <li>Culture Asie / anglosaxonne</li>
+                    <li>Musique (Piano autodidacte / Kpop, hyperpop)</li>
+                    <li>Culture Web (Streaming, Vidéo, Photo)</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="colonne-droite">
+
+            <div class="experience">
+                <h3>EXPÉRIENCE PROFESSIONNELLE</h3>
+                
+                <div class="poste">
+                    <h4>Assistant d'Éducation | Service Civique</h4>
+                    <div class="lieu">École Fractale, Niort</div>
+                    <div class="date">2022/2023</div>
+                    <ul>
+                        <li>Assistance pour élèves ayant des besoins spécifiques (hyperactivité, HPI, autisme)</li>
+                        <li>Enseignement de matières essentielles, soutien en cours.</li>
+                        <li>Faire respecter un cadre.</li>
+                        <li>Organisation de sorties pédagogiques.</li>
+                        <li>Animation d'ateliers ludiques pour favoriser l'engagement des élèves.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="formation">
+                <h3>FORMATIONS</h3>
+                
+                <div class="diplome">
+                    <h4>DEUST WMI EN DISTANCIEL</h4>
+                    <div>Université de Limoges, 87000</div>
+                    <div class="date">2025/2027</div>
+                    <div>Développement web, Multimédia, Métiers de l'internet</div>
+                </div>
+
+                <div class="diplome">
+                    <h4>PREPA MÉTIERS DU NUMÉRIQUE</h4>
+                    <div>AFPA Niort, 79000</div>
+                    <div class="date">2024/2025</div>
+                    <div>Initiation au développement web, Initiation à la maintenance informatique</div>
+                </div>
+
+                <div class="diplome">
+                    <h4>LICENCE LEA ANGLAIS CHINOIS (L1)</h4>
+                    <div>Université de La Rochelle, 17000</div>
+                    <div class="date">2021/2022</div>
+                    <div>Délégué de Promotion LEA Ang-Chin L1, Délégué de TD LEA Ang-Chin L1</div>
+                </div>
+
+                <div class="diplome">
+                    <h4>BAC LLCE ANGLAIS-MATHÉMATIQUE</h4>
+                    <div>Lycée Jean Macé, Niort 79000</div>
+                    <div class="date">2020/2021</div>
+                </div>
+            </div>
+
+        </div>
+        <div class="footer">
+            <div class="socials">
+                <h4>Mes Réseaux</h4>
+                <div><a href="https://www.instagram.com/ecwhynot0000/" target="_blank">Instagram</a></div>
+                <div><a href="https://www.tiktok.com/@ecwhynot0000" target="_blank">TikTok</a></div>
+            </div>
+            <div class="pokemon-widget">
+            <h3>POKÉMON DU MOMENT</h3>
+            <div id="poke-container" style="text-align: center;">
+                <img id="poke-img" src="" alt="Chargement..." width="120px">
+                <div id="poke-name" style="text-transform: capitalize; font-weight: bold;"></div>
+            </div>
+        </div>
+            <div class="contacts">
+                <h4>Me Contacter</h4>
+                <div><a href="mailto:ervan.celik@etu.unilim.fr">ervan.celik@etu.unilim.fr</a></div>
+            </div>
+        </div>
+    </div>
+
+</body>
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        const randomId = Math.floor(Math.random() * 1025) + 1;
+
+        const pokemonUrl = `https://pokeapi.co/api/v2/pokemon/${randomId}`;
+        const speciesUrl = `https://pokeapi.co/api/v2/pokemon-species/${randomId}`;
+
+        Promise.all([
+            fetch(pokemonUrl).then(res => res.json()),
+            fetch(speciesUrl).then(res => res.json())
+        ])
+        .then(([pokemonData, speciesData]) => {
+            const imgElement = document.getElementById('poke-img');
+            const imageUrl = pokemonData.sprites.other['official-artwork'].front_default || pokemonData.sprites.front_default;
+            imgElement.src = imageUrl;
+
+            const nameElement = document.getElementById('poke-name');
+            
+            const frenchEntry = speciesData.names.find(entry => entry.language.name === 'fr');
+            
+            if (frenchEntry) {
+                nameElement.textContent = "#" + randomId + " " + frenchEntry.name;
+            } else {
+                nameElement.textContent = "#" + randomId + " " + pokemonData.name;
+            }
+        })
+        .catch(error => {
+            console.error('Erreur API:', error);
+            document.getElementById('poke-name').textContent = "Erreur...";
+        });
+    });
+</script>
+</html>
